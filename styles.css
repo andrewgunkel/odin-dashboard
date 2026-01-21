@@ -1,0 +1,72 @@
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    color: inherit;
+}
+
+:root {
+    /* Palette */
+    --palette-light: #f0f0f0;
+    --palette-dark: ;
+    --palette-accent: ;
+}
+
+:root {
+    /* Semantic roles */
+    --color-background: var(--palette-light);
+    --color-text: var(--palette-dark);
+    --color-primary: var(--palette-accent);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 10% 45% 45%;
+
+}
+
+#sidebar {
+    background-color: red;
+    padding: 20px;
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+
+header {
+    background-color: green;
+    padding: 20px;
+    grid-area: 1 / 2 / 2 / 6;
+}
+
+#right-container {
+    background-color: yellow;
+    padding: 20px;
+    grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+#card-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 30px 300px 300px 300px;
+    gap: 20px;
+    grid-area: 2 / 2 / 4 / 5;
+    background-color: blue;
+}
+
+#card-container h1 {
+    grid-column: 1 / -1;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
