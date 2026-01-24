@@ -44,10 +44,14 @@ main {
     padding: 20px;
     grid-area: 1 / 1 / 5 / 2;
     display: grid;
-    grid-template-rows: 80px 300px 300px;
-    gap: 20px;
+    grid-template-rows: max-content max-content max-content;
+    gap: 10px;
       color: white;
       padding-left: 30px;
+    grid-template-areas: 
+        "logo"
+        "main-nav"
+        "sub-nav";
 
 }
 
@@ -61,15 +65,18 @@ main {
   display: grid;
   grid-template-columns: 24px 1fr;
   align-items: center;
-  gap: 30px;
+  margin-top: 10px;
 }
 
 
 #main-nav {
     grid-template-rows: repeat(4, 40px);
+    grid-area: main-nav;
 }
 #sub-nav {
-    grid-template-rows: repeat(2, 40px);        
+    grid-template-rows: repeat(2, 40px);  
+    grid-area: sub-nav;   
+    margin-top: 50px;   
 
 }
 
@@ -78,6 +85,8 @@ main {
     color: var(--palette-light);
     display: block;
     padding: 10px 0;
+    margin-left: 30px;
+
 }
 
 #main-nav a:hover, #sub-nav a:hover{
@@ -90,7 +99,7 @@ main {
 #main-nav ul, #sub-nav ul {
     list-style-type: none;
     padding: 0;
-    font-size: 20px;
+    font-size: 1.4em;
 }
 
 #sidebar .material-icons {
@@ -99,7 +108,7 @@ main {
 }
 
 #sidebar h1 .material-icons {
-    font-size: 50px;
+    font-size: 1em;
     vertical-align: middle;
     margin-right: 10px;
 }
@@ -111,7 +120,7 @@ header {
     grid-area: 1 / 2 / 2 / 6;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 1fr max-content;
     grid-template-rows: auto;
      grid-template-areas:
         "top-left top-right"
@@ -129,8 +138,14 @@ header h2 {
 }
 
 header .material-icons {
-    font-size: 32px;
- 
+    font-size: 2em;
+
+}
+
+#header-top-right #profileicon1 {
+    width: 50px;
+    height: 50px;
+
 
 }
 
@@ -138,25 +153,43 @@ header .material-icons {
     color: var(--color-primary);
 }
 
-.header-top-left {
+#header-top-left {
     grid-area: top-left;
+    display: inline-block;
 
 }
 
-.header-top-right {
-    grid-area: top-right;
-    float: right;
-}
 
-.header-bottom-left {
+#header-bottom-left {
     grid-area: bottom-left;
-    font-size: 1.5em;
-    align-self: center;
+    align-self: left;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas:
+        "profileicon greeting";
+        gap: 10px;
+ 
 }   
 
-.header-bottom-right {
-    grid-area: bottom-right;
-    text-align: right;
+#profileicon1 {
+    width: 80px;
+    height: 80px;
+    background: #3F5EFB;
+background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    grid-area: profileicon;
+    
+}
+
+#greeting {
+    grid-area: greeting;
+}
+
+#header-bottom-right {
+    display: flex;
+    justify-content: flex-end;
 }
 
 header button {
@@ -171,12 +204,18 @@ header button {
     display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin: 10px;
 }
 
 #header-top-right {
      display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
+  margin-right: 20px;
+  grid-area: top-right;
+  font-size: 1.2em;
+
 }
 
 header button:hover {
@@ -185,7 +224,7 @@ header button:hover {
 }
 
 header input[type="text"] {
-    width: 80%;
+    width: 60%;
     padding: 8px;
     background-color: var(--palette-light);
     border-radius: 20px;
@@ -264,8 +303,16 @@ hr {
     
 }
 
-.project-card {
-    display: grid;
-    border-left: 10px solid var(--palette-accent);
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
+.project-card {
+    display: grid;
+    border-left: 10px solid var(--palette-accent);  
+}
+
+.project-card:hover {
+    border-left: 10px solid var(--palette-dark);
+}
