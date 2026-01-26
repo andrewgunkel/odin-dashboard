@@ -35,7 +35,7 @@ body {
 main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: max-content max-content;
     grid-template-areas:
         "sidebar header header header header"
         "sidebar main-content main-content main-content main-content";
@@ -167,10 +167,10 @@ header .material-icons {
 }
 
 #header-top-left {
-    grid-area: top-left;
-    display: inline-block;
-    min-width: 0;
-
+  grid-area: top-left;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 
@@ -221,8 +221,9 @@ background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 23
 }
 
 #header-bottom-right {
+    grid-area: bottom-right;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 }
 
 #search-bar {
@@ -283,11 +284,11 @@ header input[type="text"]:focus {
 #main-content {
     display: grid;
     grid-template-columns: 4fr 4fr 3fr;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: max-content max-content;
     grid-template-areas:
         "your-projects your-projects announcements-title"
         "left-container left-container right-container";
-    gap: 50px;
+    gap: 30px;
     grid-area: main-content;
     padding: 20px;
     margin-left: 30px;
@@ -300,7 +301,7 @@ header input[type="text"]:focus {
     grid-area: left-container;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 300px;
+    grid-auto-rows: max-content;
     gap: 50px;
 
 }
@@ -320,8 +321,8 @@ header input[type="text"]:focus {
 
 #right-container {
   display: grid;
-    grid-auto-rows: 350px 50px 180px;
-    gap: 50px;
+    grid-auto-rows: max-content max-content max-content;
+    gap: 30px;
         grid-area: right-container;
     margin-right: 30px;
 }
@@ -360,7 +361,8 @@ hr {
 .project-card {
     display: grid;
     border-left: 10px solid var(--palette-accent);  
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: max-content max-content max-content;
+    padding-bottom: 30px;
     
 }
 
@@ -381,14 +383,17 @@ p {
     font-size: 1.2em;
 }
 
+
+
 .trending-project {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: max-content;
-    grid-template-areas: "profileicon";
-    gap: 20px;
-    padding: 10px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "avatar info";
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
 }
+
 
 .trending-project:hover {
     border-right: 10px solid var(--palette-accent);
@@ -399,6 +404,12 @@ p {
     height: 50px;
     display: flex;
     justify-content: center;
+    grid-area: avatar;
+    
 }
 
-
+.trending-project .project-info {
+  grid-area: info;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
