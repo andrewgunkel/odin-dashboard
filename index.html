@@ -1,226 +1,315 @@
+
+<!--
+
+8""""8                                                   
+8    8 eeeee eeeee e   e eeeee  eeeee eeeee eeeee  eeeee 
+8e   8 8   8 8   " 8   8 8   8  8  88 8   8 8   8  8   8 
+88   8 8eee8 8eeee 8eee8 8eee8e 8   8 8eee8 8eee8e 8e  8 
+88   8 88  8    88 88  8 88   8 8   8 88  8 88   8 88  8 
+88eee8 88  8 8ee88 88  8 88eee8 8eee8 88  8 88   8 88ee8 
+                                                         
+
+    -----------------------------------------------
+  _____ _           ___     _ _        ___          _        _   
+ |_   _| |_  ___   / _ \ __| (_)_ _   | _ \_ _ ___ (_)___ __| |_ 
+   | | | ' \/ -_) | (_) / _` | | ' \  |  _/ '_/ _ \| / -_) _|  _|
+   |_| |_||_\___|  \___/\__,_|_|_||_| |_| |_| \___// \___\__|\__|
+                                                 |__/            ```
+
+Project: Admin Dashboard
+Link to project brief: https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard
+Author: Andrew Gunkel
+
+    ===============================================
+	HTML
+	===============================================
+	-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Dashboard</title>
+	<title>Dashboard</title>
 </head>
+
 <body>
-    <main>
-        <div id="sidebar">
-            <a href=""><h1><span class="material-icons">dashboard</span>Dashboard</h1></a>
-            <nav>
-                <div id="main-nav">
 
-                <ul>
-                    <li><span class="material-icons">home</span><a href="#">Home</a></li>
-                    <li><span class="material-icons">account_box</span><a href="#">Profile</a></li>
-                    <li><span class="material-icons">message</span><a href="#">Messages</a></li>
-                    <li><span class="material-icons">arrow_circle_left </span><a href="#">History</a></li>
-                    <li><span class="material-icons">tasks</span><a href="#">Tasks</a></li>
-                    <li><span class="material-icons">group</span><a href="#">Communities </a></li>
-                    
-                </ul>
-                </div>
+	<main>
 
-                <div id="sub-nav">
-                <ul>
-                    <li><span class="material-icons">settings</span><a href="#">Settings</a></li>
-                    <li><span class="material-icons">support</span><a href="#">Support</a></li>
-                    <li><span class="material-icons">privacy_tip</span><a href="#">Privacy</a></li>
-                </ul>
-                </div>
-            </nav>
-        </div>
-        
-            <header>
-                <div id = "header-top-left">
-                    <div id="search-bar"><span class="material-icons">search</span>
-                        <input type="text"></div>
-                </div>
+		<!--
+			=====================================================
+			SIDEBAR
+			=====================================================
+		-->
 
-                <div id="header-top-right">
-                    <span class="material-icons">notifications</span>
-                    <div class="profileicon profileicon1"> </div>
-                    Andrew Gunkel
+		<div id="sidebar">
 
-                </div>
+			<aside>
 
+				<a href="">
+					<h1>
+						<span class="material-icons">dashboard</span>Dashboard
+					</h1>
+				</a>
 
-                <div id ="header-bottom-left"> 
-                
-                <div class="profileicon profileicon1"> </div>
-                   
-                <div id="greeting">
-                Hi there,
-                <h2>Andrew Gunkel (@andrewgunkel)</h2>
-                </div> </div>  
+				<nav>
 
-                <div id ="header-bottom-right"> 
-                    <button id="new-project-button"><span class="material-icons">add</span> New Project</button>
-                    <button id="upload-button"><span class="material-icons">file_upload</span> Upload</button>  
-                    <button id="share-button"><span class="material-icons">share</span> Share</button>  
-                </div>  
-            </header>
-    
-        
+					<!--
+						=========================
+						MAIN NAVIGATION
+						=========================
+					-->
 
-            <div id="main-content">
-                <h1 id="your-projects">Your projects</h1>
-                 <h1 id="announcements-title">Announcements</h1>
-                 <div id="left-container">
-                <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.</p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
+					<nav aria-label="Main navigation">
+						<div id="main-nav">
+							<ul>
+								<li><span class="material-icons">home</span><a href="#">Home</a></li>
+								<li><span class="material-icons">account_box</span><a href="#">Profile</a></li>
+								<li><span class="material-icons">message</span><a href="#">Messages</a></li>
+								<li><span class="material-icons">arrow_circle_left </span><a href="#">History</a></li>
+								<li><span class="material-icons">tasks</span><a href="#">Tasks</a></li>
+								<li><span class="material-icons">group</span><a href="#">Communities </a></li>
+							</ul>
+						</div>
+					</nav>
 
-                 <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.</p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
+					<!--
+						=========================
+						SUB NAVIGATION
+						=========================
+					-->
 
-                 <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.
-                    </p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
+					<nav aria-label="Secondary navigation">
+						<div id="sub-nav">
+							<ul>
+								<li><span class="material-icons">settings</span><a href="#">Settings</a></li>
+								<li><span class="material-icons">support</span><a href="#">Support</a></li>
+								<li><span class="material-icons">privacy_tip</span><a href="#">Privacy</a></li>
+							</ul>
+						</div>
+					</nav>
 
-                 <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.
-                    </p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
+				</nav>
 
-                 <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.</p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
+			</aside>
 
-                 <div class="card project-card">
-                    <h2>Project name</h2>   
-                    <p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
-                        It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
-                        Less noise, more signal.</p>
-                    <div class="card-icons">
-                    <span class="material-icons">star</span>
-                    <span class="material-icons">remove_red_eye</span>
-                    <span class="material-icons">share</span>
-                    </div>
-                </div>
-                </div>
+		</div>
 
-        
+		<!--
+			=====================================================
+			HEADER
+			=====================================================
+		-->
 
-                <div id = "right-container">
-                    <div id= "announcements">
-                        <div class="card">
-                            <div class="announcement">
-                            <h2>Site Maintenance</h2>   
-                            <p>This is where the main content will go.</p>
-                            </div>
-                            <hr />
-                            <div class="announcement">
-                            <h2>Community Share Day</h2>   
-                            <p>This is where the main content will go.</p>
-                            </div>
-                            <hr />
-                            <div class="announcement">
-                            <h2>Updated Privacy Policy</h2>   
-                            <p>This is where the main content will go.</p>
-                            </div>
-                        </div>  
-                    </div>
-                        <h1>Trending   </h1>
-                    <div id = "trending">
-                        
-                        <div class="card">
-                            <div class="trending-project">
-                                <div class="announcements profileicon profileicon1"> </div>
-                                <div class="project-info">
-                                <h2>@andrewgunkel</h2>   
-                                <p>Project name</p>
-                                </div>
-                            </div>
+		<header>
 
-                            <hr />
+			<div id="header-top-left">
+				<div id="search-bar">
+					<span class="material-icons">search</span>
+					<input type="text">
+				</div>
+			</div>
 
-                            <div class="trending-project">
-                            <div class="announcements profileicon profileicon2"> </div>
-                            <div class="project-info">
-                            <h2>@username2</h2>   
-                            <p>Project name</p>
-                            </div>
-                            </div>
+			<div id="header-top-right">
+				<span class="material-icons">notifications</span>
+				<div id="my-account">
+					<div class="profileicon profileicon1"></div>
+					Andrew Gunkel
+				</div>
+			</div>
 
-                            <hr />
+			<div id="header-bottom-left">
+				<div class="profileicon profileicon1"></div>
 
-                            <div class="trending-project">
-                            <div class="announcements profileicon profileicon3"> </div>
-                            <div class="project-info">
-                            <h2>@username3</h2>   
-                            <p>Project name</p>
-                            </div>
-                            </div>
+				<div id="greeting">
+					Hi there,
+					<h2>Andrew Gunkel (@andrewgunkel)</h2>
+				</div>
+			</div>
 
-                            <hr />
-                
+			<div id="header-bottom-right">
+				<button id="new-project-button"><span class="material-icons">add</span> New Project</button>
+				<button id="upload-button"><span class="material-icons">file_upload</span> Upload</button>
+				<button id="share-button"><span class="material-icons">share</span> Share</button>
+			</div>
 
-                            <div class="trending-project">
-                            <div class="announcements profileicon profileicon4"> </div>
-                            <div class="project-info">
-                            <h2>@username4</h2>   
-                            <p>Project name</p>
-                            </div>
-                            </div>
-                            </div>
-                            
-                        
-                    </div>
-                
-            </div>
-        </div>
-    </main>
+		</header>
 
-    <script src="script.js"></script>
+		<!--
+			=====================================================
+			MAIN CONTENT
+			=====================================================
+		-->
+
+		<div id="main-content">
+
+			<h1 id="your-projects">Your projects</h1>
+			<h1 id="announcements-title">Announcements</h1>
+
+			<div id="left-container">
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.
+					</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.
+					</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+				<div class="card project-card">
+					<h2>Project name</h2>
+					<p>This project explores how thoughtful design and small, deliberate decisions can turn everyday interactions into something quietly delightful. 
+						It is built as a living system, flexible by default, opinionated where it matters, and designed to grow without collapsing under its own weight. 
+						Less noise, more signal.</p>
+					<div class="card-icons">
+						<span class="material-icons">star</span>
+						<span class="material-icons">remove_red_eye</span>
+						<span class="material-icons">share</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="right-container">
+
+				<div id="announcements">
+					<div class="card">
+
+						<div class="announcement">
+							<h2>Site Maintenance</h2>
+							<p>This is where the main content will go.</p>
+						</div>
+
+						<hr />
+
+						<div class="announcement">
+							<h2>Community Share Day</h2>
+							<p>This is where the main content will go.</p>
+						</div>
+
+						<hr />
+
+						<div class="announcement">
+							<h2>Updated Privacy Policy</h2>
+							<p>This is where the main content will go.</p>
+						</div>
+
+					</div>
+				</div>
+
+				<h1>Trending   </h1>
+
+				<div id="trending">
+
+					<div class="card">
+
+						<div class="trending-project">
+							<div class="announcements profileicon profileicon1"></div>
+							<div class="project-info">
+								<h2>@andrewgunkel</h2>
+								<p>Project name</p>
+							</div>
+						</div>
+
+						<hr />
+
+						<div class="trending-project">
+							<div class="announcements profileicon profileicon2"></div>
+							<div class="project-info">
+								<h2>@username2</h2>
+								<p>Project name</p>
+							</div>
+						</div>
+
+						<hr />
+
+						<div class="trending-project">
+							<div class="announcements profileicon profileicon3"></div>
+							<div class="project-info">
+								<h2>@username3</h2>
+								<p>Project name</p>
+							</div>
+						</div>
+
+						<hr />
+
+						<div class="trending-project">
+							<div class="announcements profileicon profileicon4"></div>
+							<div class="project-info">
+								<h2>@username4</h2>
+								<p>Project name</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</main>
+
 </body>
 </html>
