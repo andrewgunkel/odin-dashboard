@@ -17,7 +17,4 @@
 Project: Admin Dashboard
 Link to project brief: https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard
 Author: Andrew Gunkel
-
-Project: Admin Dashboard
-Link to project brief: https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard
-Author: Andrew Gunkel ```
+```
